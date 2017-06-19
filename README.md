@@ -1,2 +1,4 @@
-# docker-awscli
-Package awscli
+# Reference
+
+http://docs.aws.amazon.com/cli/latest/reference/
+
