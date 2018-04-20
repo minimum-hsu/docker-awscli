@@ -6,6 +6,6 @@ RUN rpm --import https://www.centos.org/keys/RPM-GPG-KEY-CentOS-7 \
   && yum -yq install epel-release \
   && rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 \
   && yum -yq install vim python34 python34-pip jq \
-  && pip3 install -U -q pip awscli boto3
+  && pip3 install -U -q pip awscli
 
-ENTRYPOINT ["aws"]
+ENTRYPOINT ["/usr/bin/aws"]

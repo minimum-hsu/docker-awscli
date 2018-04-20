@@ -2,9 +2,9 @@ FROM alpine
 
 LABEL maintainer s5550055.minimum@gmail.com
 
-RUN apk --no-cache add python3 curl bash jq \
+RUN apk --no-cache add python3 curl bash jq groff \
   && (curl https://bootstrap.pypa.io/get-pip.py | python3) \
-  && pip3 install awscli boto3 \
+  && pip3 install awscli \
   && apk del curl
 
-ENTRYPOINT ["/bin/aws"]
+ENTRYPOINT ["/usr/bin/aws"]

@@ -3,7 +3,7 @@ FROM debian:jessie
 LABEL maintainer s5550055.minimum@gmail.com
 
 RUN apt-get -qq update \
-  && apt-get -qq -y install vim python3 python3-pip jq \
-  && pip3 install -U -q pip awscli boto3
+  && apt-get -qq -o=Dpkg::Use-Pty=0 -y install vim python3 python3-pip jq groff \
+  && pip3 install -U -q awscli
 
-ENTRYPOINT ["aws"]
+ENTRYPOINT ["/usr/local/bin/aws"]
